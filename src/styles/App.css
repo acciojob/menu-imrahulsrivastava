@@ -1,12 +1,20 @@
 h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+  color: rgb(152, 113, 40);
+  text-align: center;
+  border-bottom: 2px solid rgb(152, 113, 40);
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+button {
+  color: rgb(152, 113, 40);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: none;
+}
+
+.menu-bar {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 }
