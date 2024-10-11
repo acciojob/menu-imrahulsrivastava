@@ -1,20 +1,123 @@
-h1 {
-  color: rgb(152, 113, 40);
-  text-align: center;
-  border-bottom: 2px solid rgb(152, 113, 40);
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-button {
-  color: rgb(152, 113, 40);
+/* Main Container */
+#main {
+  padding: 20px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
+}
+
+#main h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Button Styles */
+#main button {
+  background-color: #f0c040;
   border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.menu-bar {
-  margin: auto;
-  align-items: center;
-  justify-content: center;
+#main button:hover {
+  background-color: #e09a00;
+}
+
+/* Menu Grid Layout */
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.menu-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item-content {
+  padding: 15px;
+}
+
+.menu-item h2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.menu-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  #main h1 {
+    font-size: 3rem;
+  }
+
+  #main button {
+    font-size: 1.2rem;
+  }
+
+  .menu-item img {
+    height: 250px;
+  }
+
+  .menu-item h2 {
+    font-size: 1.75rem;
+  }
+
+  .menu-item p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #main h1 {
+    font-size: 3.5rem;
+  }
+
+  #main button {
+    font-size: 1.4rem;
+  }
+
+  .menu-item img {
+    height: 300px;
+  }
+
+  .menu-item h2 {
+    font-size: 2rem;
+  }
+
+  .menu-item p {
+    font-size: 1.2rem;
+  }
 }

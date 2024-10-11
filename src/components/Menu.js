@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "../data.js";
+import data from "../constants/data.js";
 
 const Menu = () => {
   let [dishes, setDishes] = useState(data);
@@ -16,29 +16,37 @@ const Menu = () => {
   return (
     <div id="main">
       <h1>Our Menu</h1>
-      <p onClick={handleCategories}>All</p>
-      <p id="filter-btn-1" onClick={handleCategories}>
+      <button onClick={handleCategories}>All</button>
+      <button id="filter-btn-1" onClick={handleCategories}>
         Breakfast
-      </p>
-      <p id="filter-btn-2" onClick={handleCategories}>
+      </button>
+      <button id="filter-btn-2" onClick={handleCategories}>
         Lunch
-      </p>
-      <p id="filter-btn-3" onClick={handleCategories}>
+      </button>
+      <button id="filter-btn-3" onClick={handleCategories}>
         Shakes
-      </p>
+      </button>
 
-      {dishes.map((food) => {
-        const category = food.category;
-        return (
-          <div data-test-id={`menu-item-${category}`}>
-            <img src={food.img} alt={food.title}></img>
-            <h2>
-              <span>{food.title}</span> <span>{food.price}</span>
-            </h2>
-            <p>{food.desc}</p>
-          </div>
-        );
-      })}
+      <div className="menu-container">
+        {dishes.map((food) => {
+          const { id, title, category, price, img, desc } = food;
+          return (
+            <div
+              key={id}
+              data-test-id={`menu-item-${category}`}
+              className="menu-item"
+            >
+              <img src={img} alt={title}></img>
+              <div className="menu-item-content">
+                <h2>
+                  <span>{title}</span> <span>{price}</span>
+                </h2>
+              </div>
+              <p>{desc}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
