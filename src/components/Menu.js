@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import data from "../constants/data.js";
+import MenuItem from "./MenuItem.js";
 
 const Menu = () => {
   let [dishes, setDishes] = useState(data);
@@ -28,24 +29,9 @@ const Menu = () => {
       </button>
 
       <div className="menu-container">
-        {dishes.map((food) => {
-          const { id, title, category, price, img, desc } = food;
-          return (
-            <div
-              key={id}
-              data-test-id={`menu-item-${category}`}
-              className="menu-item"
-            >
-              <img src={img} alt={title}></img>
-              <div className="menu-item-content">
-                <h2>
-                  <span>{title}</span> <span>{price}</span>
-                </h2>
-              </div>
-              <p>{desc}</p>
-            </div>
-          );
-        })}
+        {dishes.map((food) => (
+          <MenuItem key={food.id} food={food} />
+        ))}
       </div>
     </div>
   );
